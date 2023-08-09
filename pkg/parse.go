@@ -234,6 +234,10 @@ func (p *Parser) packageInterfaces(
 			continue
 		}
 
+		if !strings.HasSuffix(name, "Client") {
+			continue
+		}
+
 		elem := &Interface{
 			Name:          name,
 			Pkg:           pkg,
